@@ -1,0 +1,31 @@
+
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle started.");
+    }
+}
+
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car is driving.");
+    }
+}
+
+interface Electric {
+    void chargeBattery();
+}
+
+class ElectricCar extends Car implements Electric {
+    @Override
+    public void chargeBattery() {
+        System.out.println("Battery is charging.");
+    }
+
+    public static void main(String[] args) {
+        ElectricCar e = new ElectricCar();
+
+        e.start();
+        e.drive();
+        e.chargeBattery();
+    }
+}
